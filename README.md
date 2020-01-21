@@ -1,2 +1,1 @@
-# wst_klvb
-We Semantic Technologies Klausur Vorbereitung
+# Web Semantik Technologien
