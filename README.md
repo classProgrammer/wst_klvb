@@ -220,7 +220,120 @@ indicative of overall topic
     - assign to closest centroid
   - k Nearest Neighbor kNN
 # Information Extraction
-
+- Identify specific pieces of information (data) in a unstructured
+or semi structured textual document.
+- Transform unstructured information of a corpus of documents or
+web pages into a structured database
+- processing human language documents by means of natural
+language processing (NLP
+- current approaches to IE focus on narrowly restricted domains:
+sports, medicine, business
+- Extraction of
+  - Entities => e.g. Person => You
+    - Generic => Person, Organization, ...
+    - Custom => domain specific e.g. Drugs, Deseases
+    - Numeric => Time, Date, Numbers
+  - Attributes => e.g. Title of a Person => BSc
+  - Facts => relations between entities => Suckerberg works at Facebook
+  - Events => activity or occurance => NSA - terroristic acts, ABC merges with BBC etc.
+- NER - Named Entity Recognition
+  - mark each element which represents
+    - person
+    - company
+    - country
+    - ...
+  - NER involves identification of proper names in texts, and classification into a set of predefined categories of interest
+  - ![](img/ner.PNG)
+  - Extract Content
+    - remove irrelevant content = junk
+      - Pictures
+      - Tables
+      - Diagrams
+      - Adds
+  - Tokenization
+    - extract tokens
+    - Problems
+      - symbols like (. , : "" '' ...)
+  - Sentence Segmentation
+    - Nomen est Omen
+  - POS Tagging
+    - Assign types to words
+      - Noun
+      - Adjective
+      - Verb
+      - ...
+    - Problem: ambiguity
+    - Rule based approach
+      - analyze word, word before, word after etc.
+      - analyze surrounding context
+    - Probabilistic Approach
+      - How common is it that this type of word is after such a type of word
+    - Unigram Tagger
+      - assign most likely tag to token
+    - Stochastic / N-gram / HMM
+    - N-gram
+      - generaliztion of unigram tagger
+      - look at sequences of words and assign tags
+      - consider all possible combination and take the most likely one
+    - HMM based tagging
+      - (Informally) Markov models are the class of probabilistic models that assume we can predict the future without taking too much account of the past
+    - Bigram Tagger
+      - assign tags to groups of two words
+    - Phrase Structure
+      - identify syntactical froups within a sentence
+        - Noun Phrase
+        - Verb Phrase
+      - Chunking (Partial Parsing)
+        - divide sentence in prase chunks
+    - Recognize Entities
+      - find named entities
+        1) Segmentation
+        2) Classification
+  - Morphology
+    - get root form of a word
+    
+- Sequence Labeling
+  - Local: previous label
+  - Global: lable by maximizing on the whole sentence
+- TE - Tempalte Element Task
+  - generic object with attributes
+  - draws evidence from everywhere in the text 
+- TR - Tempalte Realtion
+  - find the relationship
+  - e.g. employee_of, product_of, location_of
+- ST - Scenario Template Task
+  - extract specific event information
+  - relate info to organization/person/artifact
+- CO - Coreference Task
+  - ???
+- Examples of IE
+  - Disaster Events
+- Components of an IE system
+  1) Tokenization
+     - split input into parts = tokes
+  2) Morphological and lexical analysis
+     - Part of Speech - POS Tagging 
+       - assign type to word (verb, noun, adjective, ...)
+     - disambiguating the sense of ambigous words
+       - words that are written the same but have different meanings
+       - flies => the flies sit on a pile of shit, or a bird flies
+  3) Syntactic analysis
+     - connection between parts of a sentence
+  4) Domain analysis
+     - combine all info from the steps before
+     - describes relationship between entities
+     - CO COreference Resolution - Anaphora Resolution
+       - match indirect references
+       - e.g. they in the next sentence refers to an entity from the privioud one
+  5) Integration
+     - Merge results with oter IE systems (Onthologies)
+- Evaluation
+  - Precision
+    - probability that retrieved doc is relevant
+  - Recall
+    - probability that relevant doc is retreived in a search
+  - F-measure
+    - combines precision and recall
 # Web Search & Crawling
 
 # Semantic Knowledge Models, Semantic Web Stack
