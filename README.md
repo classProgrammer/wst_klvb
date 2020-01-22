@@ -217,15 +217,14 @@ indicative of overall topic
   - assigns objects to predefined groups
   - Rocchio Method
     - tf-idf weights
-    - assign to closest centroid
+    - assign to the closest centroid
   - k Nearest Neighbor kNN
 # Information Extraction
-- Identify specific pieces of information (data) in a unstructured
-or semi structured textual document.
+- Identify specific pieces of information (data) in a unstructured or semi structured textual document.
 - Transform unstructured information of a corpus of documents or
 web pages into a structured database
-- processing human language documents by means of natural
-language processing (NLP
+- processing human language documents utilizing natural
+language processing (NLP)
 - current approaches to IE focus on narrowly restricted domains:
 sports, medicine, business
 - Extraction of
@@ -272,10 +271,10 @@ sports, medicine, business
       - assign most likely tag to token
     - Stochastic / N-gram / HMM
     - N-gram
-      - generaliztion of unigram tagger
+      - generalization of unigram tagger
       - look at sequences of words and assign tags
       - consider all possible combination and take the most likely one
-    - HMM based tagging
+    - HMM-based tagging
       - (Informally) Markov models are the class of probabilistic models that assume we can predict the future without taking too much account of the past
     - Bigram Tagger
       - assign tags to groups of two words
@@ -293,7 +292,7 @@ sports, medicine, business
     - get root form of a word
     
 - Sequence Labeling
-  - Local: previous label
+  - Local: the previous label
   - Global: lable by maximizing on the whole sentence
 - TE - Tempalte Element Task
   - generic object with attributes
@@ -335,6 +334,96 @@ sports, medicine, business
   - F-measure
     - combines precision and recall
 # Web Search & Crawling
+- User Needs
+  - Informational
+  - Navigational
+  - Transactional
+- Result Quality
+  - Relevance not enough
+  - Trustworthy?
+- Precision vs Recall
+  - Precision
+  - Recall: not relevant in Web
+- Crawler Operations
+  - begin with known URLs
+  - fetch and parse them
+    - extract URLs
+    - Place extracted URL on queue
+  - Fetch each URL on the queue and repeat
+- Crawler Props
+  - DISTRIBUTED SYSTEM => one crawler not feasible
+  - Malicious pages
+    - SPAM
+    - Spider Traps
+  - Non Malicious
+    - Latency can be an issue
+    - How deep should you crawl a sites URL hierarchy?
+    - Duplicate pages
+- What Crawlers must do
+  - be polite
+    - only allowed pages
+  - be robust
+    - spider traps etc.
+- What Crawlers should do
+  - distribute operations
+  - be scalable
+  - perfomance
+  - high quality pages first
+  - continous operations
+    - check sites in cycles
+  - Extensible
+    - new data formats
+- Crawling steps
+  - pick URL
+  - fetch document at URL
+  - parse URL
+    - link extraction
+  - Check if URL has content already seen
+    - if not add indices
+  - For each extracted URL
+    - pass URL filter test
+    - check if it is in frontier
+  - ![](./img/crawl.PNG)
+- URL Frontier
+  - multiple pages from the same host possible
+  - avoid fetching them all at the same time
+  - try to keep crawling threads busy
+- DNS
+  - get IP to URL
+  - use DNS caching (lookups can take seconds)
+  - Batch DNS requests
+- Parsing - URL Normalization
+  - some extracted links are relative URLs
+  - solution
+    - expand URLs => absolute path
+- Content already seen?
+  - duplication widespread
+  - if a page is in the index do not process it
+  - verify with
+    - doc fingerprint e.g. Hash
+    - shingles = compare text parts (Shingle)
+- Duplicate URL Eliminator
+  - one-shot crawl => just once not continuous
+## Link Analysis
+- The Web is a directed graph
+- Indexing anchor text
+  - can score achor text with weight depending on the authority of the anchor page's website
+- Citation Analysis
+  - citation frequency
+  - Co-citation coupling frequency
+  - Citation Indexing
+  - Pagerank preview
+- Query independent ordering
+  - count links
+    - undirected = inlink + outlink
+    - directed = inlink
+- Page Rank
+- Topic specific Page Rank
+- HITS
+  - hub page
+  - authority page
+- High-level scheme
+  - 
 
 # Semantic Knowledge Models, Semantic Web Stack
 
